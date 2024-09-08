@@ -2,7 +2,7 @@ from functools import lru_cache
 import numpy as np
 import pandas as pd
 
-
+import scikit
 import requests
 
 import zipfile
