@@ -22,7 +22,7 @@ from sklearn.metrics.pairwise import linear_kernel
 import streamlit as st
 
 from PIL import Image
-pip install scikit-learn
+
 global df_movies, df_ratings, df_final, df_links
 
 @lru_cache(maxsize=1000)  # Cachea hasta 1000 llamadas para acelerar las repeticiones
