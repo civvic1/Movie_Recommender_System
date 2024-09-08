@@ -1,10 +1,7 @@
 from functools import lru_cache
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import matplotlib.ticker as ticker
-import matplotlib.dates as mdates
-import matplotlib.cm as cm
+
 import requests
 import seaborn as sns
 import zipfile
