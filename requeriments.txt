@@ -1,4 +1,3 @@
-pip install scikit-learn
 scikit-learn==1.3.0
 streamlit==1.25.0
 pillow==9.5.0
