@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 import requests
-import seaborn as sns
+
 import zipfile
 import warnings
 from sklearn.feature_extraction.text import TfidfVectorizer
