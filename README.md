@@ -1,7 +1,7 @@
 # 🎬 Sistema de Recomendación de Películas
 
 ## 📝 Descripción
-Este proyecto implementa un sistema de recomendación de películas utilizando técnicas de aprendizaje automático y procesamiento del lenguaje natural.
+Este proyecto implementa un sistema de recomendación de películas utilizando técnicas de aprendizaje automático.
 
 ## 🛠 Tecnologías Utilizadas
 - Python
