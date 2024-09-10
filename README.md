@@ -44,9 +44,6 @@ El sistema genera recomendaciones basadas en la similitud de contenido entre pel
 ## 🤝 Contribuciones
 Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambios importantes antes de hacer un pull request.
 
-## 📄 Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
-
 ## 📞 Contacto
 Para cualquier consulta, por favor abre un issue en el repositorio de GitHub.
 
