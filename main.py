@@ -395,3 +395,4 @@ if st.session_state.mostrar_detalle and st.session_state.selected_movie:
     st.write(f"Géneros: {st.session_state.selected_movie['genres']}")
     st.image(st.session_state.selected_movie['image_url'], use_column_width=True)
     st.session_state.mostrar_detalle = False  # Restablecer el estado después de mostrar los detalles
+
