@@ -20,7 +20,7 @@ if 'selected_movie' not in st.session_state:
     st.session_state.selected_movie = None
 
 # Función para obtener la URL de la imagen de una película
-def get_movie_image_url(tmdb_id, api_key='64b35ee705c55e7ccdd7c754a9b8cdc4'):
+def get_movie_image_url(tmdb_id, api_key):
     if tmdb_id is None or np.isnan(tmdb_id):
         return "https://via.placeholder.com/150"
     url = f'https://api.themoviedb.org/3/movie/{int(tmdb_id)}?api_key={api_key}'
@@ -96,7 +96,7 @@ def recomendacion_jaccard_por_usuario(ratings, df_items, df_links, n_recommendat
     result = df_recommendations.head(n_recommendations)
     # Añadir la columna con la URL de la imagen usando el movieId de df_links
     result = result.merge(df_links[['movieId', 'tmdbId']], on='movieId', how='left')
-    result['image_url'] = result['tmdbId'].apply(lambda x: get_movie_image_url(x))
+    result['image_url'] = result['tmdbId'].apply(lambda x: get_movie_image_url(x, api_key=st.secrets["TMDB_API_KEY"]))
     return result
 
 # Función de recomendación basada en TF-IDF
@@ -144,7 +144,8 @@ def recomendacion_tf_idf_por_titulo(titulo_pelicula, n_recommendations=5):
         # Obtener tmdbId y URL de la imagen
         tmdb_id = df_links[df_links['movieId'] == movie_id]['tmdbId'].values
         tmdb_id = tmdb_id[0] if len(tmdb_id) > 0 else None
-        image_url = get_movie_image_url(tmdb_id)
+        image_url = get_movie_image_url(tmdb_id, api_key=st.secrets["TMDB_API_KEY"])
+
 
         recommended_movies.append({
             'movieId': movie_id,
@@ -210,8 +211,7 @@ def recomendacion_knn(usuario, ratings_matrix_normalized, ratings_matrix, df_mov
 
     # Añadir la columna con la URL de la imagen usando el movieId de df_links
     recommendations = recommendations.merge(df_links[['movieId', 'tmdbId']], on='movieId', how='left')
-    recommendations['image_url'] = recommendations['tmdbId'].apply(lambda x: get_movie_image_url(x))
-
+    recommendations['image_url'] = recommendations['tmdbId'].apply(lambda x: get_movie_image_url(x, api_key=st.secrets["TMDB_API_KEY"]))
     return recommendations
 
 # Sidebar con opciones
@@ -374,7 +374,8 @@ elif st.session_state.selected_option == 'Bayesiana':
     # Mostrar las mejores recomendaciones
     top_recommendations = recomendaciones.head(5)
     top_recommendations = top_recommendations.merge(df_links[['movieId', 'tmdbId']], on='movieId', how='left')
-    top_recommendations['image_url'] = top_recommendations['tmdbId'].apply(lambda x: get_movie_image_url(x))
+    top_recommendations['image_url'] = top_recommendations['tmdbId'].apply(lambda x: get_movie_image_url(x, api_key=st.secrets["TMDB_API_KEY"]))
+
 
     # Mostrar las películas y los botones de detalles
     st.title("Top 5 Películas Populares:")
@@ -395,4 +396,5 @@ if st.session_state.mostrar_detalle and st.session_state.selected_movie:
     st.write(f"Géneros: {st.session_state.selected_movie['genres']}")
     st.image(st.session_state.selected_movie['image_url'], use_column_width=True)
     st.session_state.mostrar_detalle = False  # Restablecer el estado después de mostrar los detalles
+
 
