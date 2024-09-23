@@ -16,7 +16,7 @@ Este proyecto implementa un sistema de recomendación de películas utilizando t
 El proyecto utiliza el conjunto de datos de películas de TMDB, que incluye información sobre títulos, géneros, resúmenes y más.
 🎬 Movie Recommender System
 Este proyecto es un sistema de recomendación de películas desarrollado utilizando el conjunto de datos de The Movie Database (TMDB). La aplicación te permite calificar películas, obtener recomendaciones personalizadas y explorar títulos populares según tus preferencias.
-
+![Recomendaciones visuales](graph-tag.gif)
 🔍 ¿Qué incluye el conjunto de datos?
 El conjunto de datos de TMDB contiene información valiosa sobre:
 
