@@ -14,6 +14,30 @@ Este proyecto implementa un sistema de recomendación de películas utilizando t
 
 ## 📊 Conjunto de Datos
 El proyecto utiliza el conjunto de datos de películas de TMDB, que incluye información sobre títulos, géneros, resúmenes y más.
+🎬 Movie Recommender System
+Este proyecto es un sistema de recomendación de películas desarrollado utilizando el conjunto de datos de The Movie Database (TMDB). La aplicación te permite calificar películas, obtener recomendaciones personalizadas y explorar títulos populares según tus preferencias.
+
+🔍 ¿Qué incluye el conjunto de datos?
+El conjunto de datos de TMDB contiene información valiosa sobre:
+
+🎥 Títulos de Películas
+🏷️ Géneros
+📝 Resúmenes
+⭐ Puntuaciones de Usuarios
+🎞️ Pósteres de Películas (obtenidos a través de la API de TMDB)
+📅 Fecha de Lanzamiento
+⏳ Duración
+🛠️ Funcionalidades del Recomendador
+Similitud de Jaccard: Recomienda películas basadas en la similitud de géneros y descripciones.
+TF-IDF: Utiliza la relevancia de palabras clave para sugerir títulos.
+KNN: Agrupa usuarios según patrones de calificación similares para recomendaciones colaborativas.
+Modelo Bayesiano: Ordena películas populares basándose en el promedio ponderado de votos.
+🚀 Acceso a la Aplicación
+Puedes explorar el sistema de recomendación de películas en acción haciendo clic en el siguiente enlace:
+
+👉 Acceder a la aplicación: https://movierecommender-system-victor.streamlit.app/
+
+
 
 ## 🔍 Características Principales
 1. **Preprocesamiento de Datos**: Limpieza y preparación de los datos de películas.
